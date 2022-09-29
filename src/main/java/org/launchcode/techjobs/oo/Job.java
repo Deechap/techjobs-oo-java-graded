@@ -18,17 +18,17 @@ public class Job {
     //  the 'id' field.
 //First constructor:
 public Job() {
-    this.id = nextId;
+    id = nextId;
     nextId++;
 }
 //Second constructor:
-    public Job (String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+    public Job (String aName, Employer aEmployer, Location aLocation, PositionType aPositionType, CoreCompetency aCoreCompetency) {
     this();
-    this.name = name;
-    this.employer = employer;
-    this.location = location;
-    this.positionType = positionType;
-    this.coreCompetency = coreCompetency;
+    this.name = aName;
+    this.employer = aEmployer;
+    this.location = aLocation;
+    this.positionType = aPositionType;
+    this.coreCompetency = aCoreCompetency;
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
