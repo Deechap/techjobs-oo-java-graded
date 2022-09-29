@@ -69,7 +69,7 @@ public class JobTest {
         Job jobOne = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         char firstChar = jobOne.toString().charAt(0);
         char lastChar = jobOne.toString().charAt(jobOne.toString().length() - 1);
-        assertEquals(firstChar, '\n')
+        assertEquals(firstChar, '\n');
                 assertEquals(lastChar, '\n');
     }
 
