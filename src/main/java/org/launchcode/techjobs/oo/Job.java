@@ -6,7 +6,6 @@ public class Job {
 
     private int id;
     private static int nextId = 1;
-
     private String name;
     private Employer employer;
     private Location location;
@@ -17,18 +16,19 @@ public class Job {
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
 //First constructor:
-public Job() {
-    id = nextId;
-    nextId++;
-}
-//Second constructor:
-    public Job (String aName, Employer aEmployer, Location aLocation, PositionType aPositionType, CoreCompetency aCoreCompetency) {
-    this();
-    this.name = aName;
-    this.employer = aEmployer;
-    this.location = aLocation;
-    this.positionType = aPositionType;
-    this.coreCompetency = aCoreCompetency;
+    public Job() {
+        id = nextId;
+        nextId++;
+    }
+
+    //Second constructor:
+    public Job(String aName, Employer aEmployer, Location aLocation, PositionType aPositionType, CoreCompetency aCoreCompetency) {
+        this();
+        this.name = aName;
+        this.employer = aEmployer;
+        this.location = aLocation;
+        this.positionType = aPositionType;
+        this.coreCompetency = aCoreCompetency;
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
@@ -94,5 +94,31 @@ public Job() {
     //Getter for ID field
     public int getId() {
         return id;
+    }
+
+    //    testing for empty fields
+    @Override
+    public String toString() {
+        if (getName() == "") {
+            setName("Data not available");
+        }
+        if (getEmployer().getValue() == "") {
+            employer.setValue("Data not available");
+        }
+        if (getLocation().getValue() == "") {
+            location.setValue("Data not available");
+        }
+        if (getPositionType().getValue() == "") {
+            positionType.setValue("Data not available");
+        }
+        if (getCoreCompetency().getValue() == "") {
+            coreCompetency.setValue("Data not available");
+        }
+        return "\n" +
+                "ID: " = getId() + '\n' +
+                "Name: " + getName() + '\n' +
+                "Employer: " + getEmployer() + '\n' +
+                "Position Type: " + getPositionType() + '\n' +
+                "Core Competency: " + getCoreCompetency() + '\n';
     }
 }
