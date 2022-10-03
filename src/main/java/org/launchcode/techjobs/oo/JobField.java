@@ -6,22 +6,22 @@ public abstract class JobField {
 
     //    shared fields
     private int id;
-    private static int nextID = 1;
+    private static int nextId = 1;
     private String value;
 
-    //    shared constructors
-//    public JobField() {
-//        this.id = nextId;
-//        nextID++;
-//    }
+    //        shared constructors
+    public JobField() {
+        this.id = nextId;
+        nextId++;
+    }
 
-//    public JobField(String value) {
-//        this();
-//        this.value = value;
-//    }
+    public JobField(String value) {
+        this();
+        this.value = value;
+    }
 
     //    getters/setters
-    public int getID() {
+    public int getId() {
         return id;
     }
 
@@ -33,10 +33,11 @@ public abstract class JobField {
         this.value = value;
     }
 
-//    @Override
-//    public int hashCode() {
-//        return Object.hash(getID());
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
+}
 
 
 
