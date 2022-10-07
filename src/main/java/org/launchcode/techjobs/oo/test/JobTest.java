@@ -70,6 +70,8 @@ public class JobTest {
                 "Location: " + jobOne.getLocation() + '\n' +
                 "Position Type: " + jobOne.getPositionType() + '\n' +
                 "Core Competency: " + jobOne.getCoreCompetency() + '\n';
+        String actual = jobOne.toString();
+        assertEquals(expected, actual);
     }
 
 //how to handle when empty fields

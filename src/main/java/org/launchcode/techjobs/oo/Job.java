@@ -35,21 +35,20 @@ public class Job {
     //  match.
 
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Job job = (Job) o;
-        return id == job.id && Objects.equals(name, job.name) && Objects.equals(employer, job.employer) && Objects.equals(location, job.location) && Objects.equals(positionType, job.positionType) && Objects.equals(coreCompetency, job.coreCompetency);
-    }
 
+
+    @Override
+    public boolean equals(Object o) {  // Two objects are equal if they have the same id.
+        if (this == o) return true;
+        if (!(o instanceof Job)) return false;
+        Job job = (Job) o;
+        return getId() == job.getId();
+    }
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, employer, location, positionType, coreCompetency);
+        return Objects.hash(getId());
     }
 
-    // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
-    //  and id.
     //Getters and Setters for each field, except nextId and id
     public String getName() {
         return name;
@@ -97,6 +96,7 @@ public class Job {
     }
 
     //    testing for empty fields
+
     @Override
     public String toString() {
         if (getName() == "") {
@@ -114,7 +114,7 @@ public class Job {
         if (getCoreCompetency().getValue() == "") {
             coreCompetency.setValue("Data not available");
         }
-//        not sure where to go from here
+
         return ("\n" + "ID: " + id + "\nName: " + name + "\nEmployer: " + employer + "\nLocation: " + location + "\nPosition Type: " + positionType + "\nCore Competency: " + coreCompetency + "\n");
     }
 }
